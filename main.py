@@ -4,7 +4,10 @@ from telegram import Update, Bot
 from telegram.ext import CommandHandler, MessageHandler, filters, CallbackContext, Application
 
 load_dotenv()
-TOKEN = os.getenv('7243782435:AAFdWdi55hF0k3GBA3wpJK59zZxdAoEnFeE')
+TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+if not TOKEN:
+    raise ValueError("No TELEGRAM_BOT_TOKEN found in environment variables")
+
 bot = Bot(token=TOKEN)
 application = Application.builder().token(TOKEN).build()
 
