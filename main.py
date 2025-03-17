@@ -1,9 +1,8 @@
 import os
-from dotenv import load_dotenv
 from telegram import Update, Bot
 from telegram.ext import CommandHandler, MessageHandler, filters, CallbackContext, Application
 
-load_dotenv()
+# Зчитуємо змінну середовища TELEGRAM_BOT_TOKEN
 TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 if not TOKEN:
     raise ValueError("No TELEGRAM_BOT_TOKEN found in environment variables")
@@ -22,3 +21,4 @@ application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
 
 if __name__ == '__main__':
     application.run_polling()
+    
