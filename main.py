@@ -21,4 +21,3 @@ application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
 
 if __name__ == '__main__':
     application.run_polling()
-    
