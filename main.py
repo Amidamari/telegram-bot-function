@@ -1,11 +1,8 @@
-import os
 from telegram import Update, Bot
 from telegram.ext import CommandHandler, MessageHandler, filters, CallbackContext, Application
 
-# Зчитуємо змінну середовища TELEGRAM_BOT_TOKEN
-TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
-if not TOKEN:
-    raise ValueError("No TELEGRAM_BOT_TOKEN found in environment variables")
+# Додайте ваш токен безпосередньо тут
+TOKEN = '7243782435:AAFdWdi55hF0k3GBA3wpJK59zZxdAoEnFeE'
 
 bot = Bot(token=TOKEN)
 application = Application.builder().token(TOKEN).build()
